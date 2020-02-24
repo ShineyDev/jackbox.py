@@ -1,33 +1,23 @@
 .. jackbox.py documentation master file
 
+.. currentmodule:: jackbox
 
 jackbox.py
 ==========
 
-An asynchronous Python framework for interacting with |jackbox_games|.
-
+An asynchronous Python framework for interacting with |jackbox_games|_.
 
 Classes
 -------
 
-.. toctree::
-	:maxdepth: 2
-
-	
-
-.. toctree::
-	:maxdepth: 1
-
-	
+.. autoclass:: Client
+   :members:
 
 Other
 -----
 
 .. toctree::
-	:maxdepth: 1
-
-	
-
+   :maxdepth: 1
 
 Still can't find what you're looking for?
 

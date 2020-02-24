@@ -2,7 +2,7 @@
 /jackbox/client.py
 
     Copyright (c) 2020 ShineyDev
-    
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
@@ -23,16 +23,18 @@ from jackbox.helpers import context
 
 class Client():
     """
-    The base client for connection to a |jackbox_party_pack| game.
+    The base client for connection to a |jackbox_party_pack|_ game.
 
     Parameters
     ----------
     loop: :class:`asyncio.Loop`
         The loop to run the client in.
     client_attrs: :class:`dict`
-        A map of `attr: value` to add to the :class:`jackbox.Client` class.
+        A map of `attr: value` to add to the :class:`jackbox.Client`
+        class.
     context_attrs: :class:`dict`
-        A map of `attr: value` to add to all :class:`jackbox.helpers.Context` classes.
+        A map of `attr: value` to add to all
+        :class:`jackbox.helpers.Context` classes.
 
     Attributes
     ----------
@@ -88,7 +90,7 @@ class Client():
         """
         |coro|
 
-        Closes the websocket connection to the |jackbox_games| server.
+        Closes the websocket connection to the |jackbox_games|_ server.
         """
 
         await self._wss.close(send_close=True)
@@ -97,8 +99,8 @@ class Client():
         """
         |coro|
 
-        Opens a websocket connection to the |jackbox_games| server and
-        joins a |jackbox_party_pack| game room.
+        Opens a websocket connection to the |jackbox_games|_ server and
+        joins a |jackbox_party_pack|_ game room.
 
         Parameters
         ----------
@@ -131,10 +133,28 @@ class Client():
         await self._wss.cancel_countdown()
 
     # helpers
-    
+
     def add_listener(self, func, *, name: str=None):
         """
+        A non-decorator alternative to :meth:`.listen`.
 
+        Parameters
+        ----------
+        func
+            The coroutine function to register.
+        name: Optional[:class:`str`]
+            The name of the event. By default this is the function
+            name.
+
+        Example
+        --------
+
+        .. code-block:: python3
+
+            async def on_customer_blob_changed(ctx, before, after):
+                pass
+
+            client.add_listener(on_customer_blob_changed)
         """
 
         if not asyncio.iscoroutinefunction(func):
@@ -149,7 +169,15 @@ class Client():
 
     def remove_listener(self, func, *, name: str=None) -> None:
         """
+        Removes a specific listener from this client.
 
+        Parameters
+        ----------
+        func
+            The coroutine function to unregister.
+        name: Optional[:class:`str`]
+            The name of the event. By default this is the function
+            name.
         """
 
         name = name or func.__name__
@@ -161,6 +189,29 @@ class Client():
 
     def listen(self, *, name: str=None):
         """
+        A decorator that registers a function as an event handler.
+
+        The function must be a |coroutine_link|_ function.
+
+        Parameters
+        ----------
+        name: Optional[:class:`str`]
+            The name of the event. By default this is the function
+            name.
+
+        Example
+        --------
+
+        .. code-block:: python3
+
+            @client.listen()
+            async def on_customer_blob_changed(ctx, before, after):
+                print(after.state)
+
+            # with a custom function name
+            @client.listen(name="on_customer_blob_changed")
+            async def foo(ctx, before, after):
+                ...
 
         """
 
@@ -172,6 +223,22 @@ class Client():
 
     async def wait_for(self, event, *, timeout: int=None):
         """
+        |coro|
+
+        Waits for a specific event. This works as a one-time listener
+        that can be waited upon in other callbacks.
+
+        .. note::
+
+            The result of a :meth:`.wait_for` will not contain the
+            context parameter.
+
+        Example
+        --------
+
+        .. code-block:: python3
+
+            before, after = await client.wait_for("room_join")
 
         """
 
