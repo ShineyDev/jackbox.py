@@ -4,18 +4,6 @@
 jackbox.py
 ==========
 
-.. image:: https://img.shields.io/github/contributors/ShineyDev/jackbox.py.svg
-   :target: https://github.com/ShineyDev/jackbox.py/graphs/contributors
-   :alt: GitHub contributors
-
-.. image:: https://readthedocs.org/projects/jackboxpy/badge/?version=latest
-   :target: https://jackboxpy.readthedocs.io/en/latest/
-   :alt: Documentation Status
-
-.. image:: https://img.shields.io/pypi/status/jackbox.py.svg
-   :target: https://pypi.python.org/pypi/jackbox.py
-   :alt: PyPI status information
-
 .. image:: https://img.shields.io/pypi/v/jackbox.py.svg?color=blue
    :target: https://pypi.python.org/pypi/jackbox.py
    :alt: PyPI version information
@@ -28,41 +16,52 @@ jackbox.py
    :target: https://pypi.python.org/pypi/jackbox.py
    :alt: PyPI license information
 
+.. image:: https://img.shields.io/pypi/status/jackbox.py.svg
+   :target: https://pypi.python.org/pypi/jackbox.py
+   :alt: PyPI status information
 
-An asynchronous Python framework for interacting with Jackbox Games.
+.. image:: https://readthedocs.org/projects/jackboxpy/badge/?version=latest
+   :target: https://jackboxpy.readthedocs.io/en/latest/
+   :alt: Documentation status
 
+.. image:: https://img.shields.io/github/issues/ShineyDev/jackbox.py.svg?colorB=3333ff
+   :target: https://github.com/ShineyDev/jackbox.py/issues
+   :alt: Issue count
+
+.. image:: https://img.shields.io/github/contributors/ShineyDev/jackbox.py.svg
+   :target: https://github.com/ShineyDev/jackbox.py/graphs/contributors
+   :alt: GitHub contributors
+
+
+An asynchronous Python framework for interacting with Jackbox Games services.
+
+This package is not sponsored by or affiliated with Jackbox Games or its affiliates.
+"Jackbox Games" and "Jackbox Party Pack" are trademarks or registered trademarks of Jackbox Games, Inc. or its affiliates in the U.S. and elsewhere.
+
+Documentation on how to use this module is available on `readthedocs <https://jackboxpy.readthedocs.io/en/latest/>`__.
 
 Installation
 ------------
 
 **Python 3.5.2 or higher is required.**
 
-To install a ``final`` version of the wrapper do one of the following:
+To install the latest release from PyPI, run one of the following:
 
 .. code:: sh
 
-    # Windows (PyPI)
-    py -3 -m pip install --upgrade jackbox.py
+    # Unix-based systems
+    python3 -m pip install -U jackbox.py
 
-    # Linux / OS X (PyPI)
-    python3 -m pip install --upgrade jackbox.py
+    # Windows
+    py -3 -m pip install -U jackbox.py
 
-To install the development version of the wrapper do one of the following:
+To install the development version from GitHub, use one of the following:
 
 .. code:: sh
 
-    # Windows (Git)
-    git clone https://github.com/ShineyDev/jackbox.py
-    cd jackbox.py
-    py -3 -m pip install --upgrade .
+    # Unix-based systems
+    python3 -m pip install -U git+https://github.com/ShineyDev/jackbox.py
 
-    # Windows (Git, shorthand)
-    py -3 -m pip install --upgrade git+https://github.com/ShineyDev/jackbox.py
-    
-    # Linux / OS X (Git)
-    git clone https://github.com/ShineyDev/jackbox.py
-    cd jackbox.py
-    python3 -m pip install --upgrade .
+    # Windows
+    py -3 -m pip install -U git+https://github.com/ShineyDev/jackbox.py
 
-    # Linux / OS X (Git, shorthand)
-    python3 -m pip install --upgrade git+https://github.com/ShineyDev/jackbox.py

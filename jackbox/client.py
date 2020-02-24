@@ -2,7 +2,7 @@
 /jackbox/client.py
 
     Copyright (c) 2020 ShineyDev
-    
+
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
@@ -23,7 +23,7 @@ from jackbox.helpers import context
 
 class Client():
     """
-    The base client for connection to a |jackbox_party_pack| game.
+    The base client for connection to a |jackbox_party_pack|_ game.
 
     Parameters
     ----------
@@ -88,7 +88,7 @@ class Client():
         """
         |coro|
 
-        Closes the websocket connection to the |jackbox_games| server.
+        Closes the websocket connection to the |jackbox_games|_ server.
         """
 
         await self._wss.close(send_close=True)
@@ -97,8 +97,8 @@ class Client():
         """
         |coro|
 
-        Opens a websocket connection to the |jackbox_games| server and
-        joins a |jackbox_party_pack| game room.
+        Opens a websocket connection to the |jackbox_games|_ server and
+        joins a |jackbox_party_pack|_ game room.
 
         Parameters
         ----------
@@ -131,10 +131,19 @@ class Client():
         await self._wss.cancel_countdown()
 
     # helpers
-    
+
     def add_listener(self, func, *, name: str=None):
         """
+        A non-decorator alternative to :meth:`.listen`.
 
+        Example
+        --------
+
+        .. code-block:: python3
+
+            async def customer_blob_changed(before, after): pass
+
+            client.add_listener(customer_blob_changed)
         """
 
         if not asyncio.iscoroutinefunction(func):
@@ -149,7 +158,7 @@ class Client():
 
     def remove_listener(self, func, *, name: str=None) -> None:
         """
-
+        Removes a specific listener from this client.
         """
 
         name = name or func.__name__
@@ -161,6 +170,23 @@ class Client():
 
     def listen(self, *, name: str=None):
         """
+        A decorator that registers a function as a new event handler for websocket data blobs.
+
+        The function being listened to must be a |coroutine_link|_.
+
+        Example
+        --------
+
+        .. code-block:: python3
+
+            @client.listen()
+            async def customer_blob_changed(before, after):
+                rule = after.rules[0]  # bomb corp rule
+
+            # with a custom function name
+            @client.listen("customer_blob_changed")
+            async def foo(before, after):
+                ...
 
         """
 
@@ -172,6 +198,17 @@ class Client():
 
     async def wait_for(self, event, *, timeout: int=None):
         """
+        |coro|
+
+        Waits for a specific event.
+        This works as a one-time listener that can be waited upon in other callbacks.
+
+        Example
+        --------
+
+        .. code-block:: python3
+
+            before, after = await client.wait_for("customer_blob_changed")
 
         """
 

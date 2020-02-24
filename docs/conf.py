@@ -33,7 +33,7 @@ intersphinx_mapping = {
 highlight_language = "python3"
 html_experimental_html5_writer = True
 html_static_path = ["_static"]
-html_theme = "basic"
+html_theme = "alabaster"
 master_doc = "index"
 pygments_style = "friendly"
 source_suffix = ".rst"
@@ -52,4 +52,8 @@ rst_prolog = """
 .. |coro| replace:: This function is a |coroutine_link|_.
 .. |coroutine_link| replace:: *coroutine*
 .. _coroutine_link: https://docs.python.org/3/library/asyncio-task.html#coroutine
+.. |jackbox_games| replace:: Jackbox Games services
+.. _jackbox_games: https://jackboxgames.com/
+.. |jackbox_party_pack| replace:: Jackbox Party Pack
+.. _jackbox_party_pack: https://jackboxgames.com/games/
 """
