@@ -126,3 +126,5 @@ class Enum(metaclass=EnumMeta):
 
 
 from jackbox.enums.player import PlayerType
+
+from jackbox.enums.bombintern import BombCorpState

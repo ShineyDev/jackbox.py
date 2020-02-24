@@ -19,6 +19,8 @@ import logging
 
 from jackbox.client import Client
 
+from jackbox.bombintern import BombCorpClient
+
 
 __version__ = "0.1.0"
 

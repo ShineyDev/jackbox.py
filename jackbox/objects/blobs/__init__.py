@@ -24,6 +24,9 @@ class RoomBlob(Object):
     pass
 
 
+from jackbox.objects.blobs.bombintern import BombCorpCustomerBlob, BombCorpRoomBlob
+
+
 _BLOB_TYPE_MAP = {
-    
+    "bombintern": (BombCorpCustomerBlob, BombCorpRoomBlob),
 }

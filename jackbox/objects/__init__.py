@@ -34,6 +34,8 @@ class Object():
 
 from jackbox.objects.player import AudiencePlayer, Player
 
+from jackbox.objects.bombintern import BombCorpRule, BombCorpTrigger
+
 
 _PLAYER_TYPE_MAP = {
     "audience": AudiencePlayer,

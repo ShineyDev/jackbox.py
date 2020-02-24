@@ -39,11 +39,11 @@ _WS_EVENT_MAP = {
 }
 
 _START_COUNTDOWN_MAP = {
-
+    "bombintern": {"startGame": True},
 }
 
 _CANCEL_COUNTDOWN_MAP = {
-
+    "bombintern": {"cancel": True},
 }
 
 
