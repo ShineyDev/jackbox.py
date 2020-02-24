@@ -23,10 +23,10 @@ from jackbox.bombintern import BombCorpClient
 from jackbox.triviadeath2 import TriviaMurderParty2Client
 
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 _VersionInfo = collections.namedtuple("_VersionInfo", "major minor micro releaselevel serial")
-version_info = _VersionInfo(major=0, minor=1, micro=0, releaselevel="final", serial=0)
+version_info = _VersionInfo(major=0, minor=1, micro=1, releaselevel="final", serial=0)
 
 
 logging.getLogger("jackbox.py").addHandler(logging.NullHandler())
