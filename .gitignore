@@ -1,0 +1,16 @@
+# visual studio configuration
+.vs/
+
+# python cache
+__pycache__/
+
+# python documentation
+docs/build/
+
+# python package-index
+build/
+dist/
+jackbox.py.egg-info/
+
+# project
+jackbox-helpers/
