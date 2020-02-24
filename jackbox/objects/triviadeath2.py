@@ -1,5 +1,5 @@
 """
-/jackbox/objects/__init__.py
+/jackbox/objects/triviadeath2.py
 
     Copyright (c) 2020 ShineyDev
     
@@ -14,31 +14,18 @@
     limitations under the License.
 """
 
-class Object():
-    def __init__(self, **kwargs):
-        for (key, value) in kwargs.items():
-            setattr(self, key, value)
+from jackbox.objects import Object
 
-    @staticmethod
-    def _check(data):
-        raise NotImplementedError
 
+class TriviaMurderParty2Choice(Object):
     @classmethod
     def _transform_data(cls, data):
-        raise NotImplementedError
+        kwargs = dict()
 
-    @classmethod
-    def from_data(cls, data):
-        return cls(data=data, **cls._transform_data(data))
+        kwargs["color"] = data.get("color")
+        kwargs["disabled"] = data.get("disabled", False)
+        kwargs["index"] = data.get("index")
+        kwargs["key"] = data.get("key")
+        kwargs["position"] = data.get("position")
 
-
-from jackbox.objects.player import AudiencePlayer, Player
-
-from jackbox.objects.bombintern import BombCorpRule, BombCorpTrigger
-from jackbox.objects.triviadeath2 import TriviaMurderParty2Choice
-
-
-_PLAYER_TYPE_MAP = {
-    "audience": AudiencePlayer,
-    "player": Player,
-}
+        return kwargs

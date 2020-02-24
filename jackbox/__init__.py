@@ -20,6 +20,7 @@ import logging
 from jackbox.client import Client
 
 from jackbox.bombintern import BombCorpClient
+from jackbox.triviadeath2 import TriviaMurderParty2Client
 
 
 __version__ = "0.1.0"

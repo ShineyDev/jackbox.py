@@ -40,10 +40,12 @@ _WS_EVENT_MAP = {
 
 _START_COUNTDOWN_MAP = {
     "bombintern": {"startGame": True},
+    "triviadeath2": {"action": "start"},
 }
 
 _CANCEL_COUNTDOWN_MAP = {
     "bombintern": {"cancel": True},
+    "triviadeath2": {"action": "cancel"},
 }
 
 

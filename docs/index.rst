@@ -13,13 +13,13 @@ Classes
 .. toctree::
 	:maxdepth: 2
 
-	
+	clients/index
 
 .. toctree::
 	:maxdepth: 1
 
-	
-
+	enums/index
+	objects/index
 
 Other
 -----
@@ -27,7 +27,7 @@ Other
 .. toctree::
 	:maxdepth: 1
 
-	
+	changelog
 
 
 Still can't find what you're looking for?

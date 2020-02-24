@@ -128,3 +128,4 @@ class Enum(metaclass=EnumMeta):
 from jackbox.enums.player import PlayerType
 
 from jackbox.enums.bombintern import BombCorpState
+from jackbox.enums.triviadeath2 import TriviaMurderParty2Doll, TriviaMurderParty2State

@@ -25,8 +25,10 @@ class RoomBlob(Object):
 
 
 from jackbox.objects.blobs.bombintern import BombCorpCustomerBlob, BombCorpRoomBlob
+from jackbox.objects.blobs.triviadeath2 import TriviaMurderParty2CustomerBlob, TriviaMurderParty2RoomBlob
 
 
 _BLOB_TYPE_MAP = {
     "bombintern": (BombCorpCustomerBlob, BombCorpRoomBlob),
+    "triviadeath2": (TriviaMurderParty2CustomerBlob, TriviaMurderParty2RoomBlob),
 }
